@@ -1,8 +1,9 @@
 import React from 'react';
+import Burger from '../../components/Burger';
 function BurgerBuilder() {
     return ( 
         <div>
-            <p>khachirtai talh</p>
+            <Burger/>
             <p>control</p>
         </div>
      );

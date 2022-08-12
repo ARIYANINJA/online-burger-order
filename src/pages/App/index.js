@@ -1,12 +1,12 @@
 import React from 'react'
-import './style.css'
+import styles from './style.module.css'
 import Toolbar from '../../components/Toolbar'
 import BurgerBuilder from '../BurgerBuilder';
 function App() {
   return ( 
     <div>
       <Toolbar/>
-      <main className='content'>
+      <main className={styles.content}>
       <BurgerBuilder/>
       </main>
     </div>
