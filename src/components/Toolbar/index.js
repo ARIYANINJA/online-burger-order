@@ -1,12 +1,14 @@
 import React from 'react';
+import styles from './style.module.css'
 function Toolbar() {
     return ( 
-        <div>
-            <h1>
-                i am toolbar component
-            </h1>
-        </div>
+        <header className={styles.toolbar}>
+            <div >...</div>
+            <div >Logo</div>
+            <nav>menu</nav>
+        </header>
      );
 }
+
 
 export default Toolbar;
