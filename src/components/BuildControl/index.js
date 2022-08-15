@@ -4,7 +4,7 @@ function BuildControl(props) {
     return ( 
         <div className={styles.BuildControl}>
         <div className={styles.Label}>{props.orts}</div>
-        <button onClick={() => props.ortsHasah(props.type)} className={styles.Less}>Хасах</button>
+        <button disabled={props.disabledIngredients[props.type]} onClick={() => props.ortsHasah(props.type)} className={styles.Less}>Хасах</button>
         <button onClick={() => props.ortsNemeh(props.type)} className={styles.More}>Нэмэх</button>
         
      </div>

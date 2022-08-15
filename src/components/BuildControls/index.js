@@ -4,10 +4,11 @@ import React from 'react';
 function BuildControls(props) {
     return ( 
         <div className={styles.BuildControls}>
-            <BuildControl ortsHasah = {props.ortsHasah} ortsNemeh ={props.ortsNemeh}  type = "salad" orts = "Салад"/>
-            <BuildControl ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "bacon" orts = "Гахайн мах"/>
-            <BuildControl  ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "cheese" orts = "Бяслаг"/>
-            <BuildControl  ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "meat" orts = "Үхрийн мах"/>    s
+            <p>Burger price : {props.price}</p>
+            <BuildControl disabledIngredients = {props.disabledIngredients} ortsHasah = {props.ortsHasah} ortsNemeh ={props.ortsNemeh}  type = "salad" orts = "Салад"/>
+            <BuildControl disabledIngredients = {props.disabledIngredients} ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "bacon" orts = "Гахайн мах"/>
+            <BuildControl disabledIngredients = {props.disabledIngredients} ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "cheese" orts = "Бяслаг"/>
+            <BuildControl disabledIngredients = {props.disabledIngredients} ortsHasah = {props.ortsHasah} ortsNemeh = {props.ortsNemeh} type = "meat" orts = "Үхрийн мах"/>    
         </div>
      );
 }
