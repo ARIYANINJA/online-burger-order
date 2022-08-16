@@ -8,7 +8,7 @@ function OrderSummary(props) {
             </h3>
             <p>your choosing ingredients:</p>
             <ul style={styles}>
-                {Object.keys(props.ingredients).map(el=> (<li>{props.ingredientsNames[el]} : {props.ingredients[el]} </li>))}
+                {Object.keys(props.ingredients).map(el=> (<li  key = {el}>{props.ingredientsNames[el]} : {props.ingredients[el]} </li>))}
             </ul>
         </div>
      );
