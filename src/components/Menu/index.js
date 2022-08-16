@@ -5,8 +5,8 @@ function Menu() {
     return ( 
         <div>
             <ul className={styles.Menu}>
-            <MenuItem>Burger</MenuItem>
-            <MenuItem>Payment</MenuItem>
+            <MenuItem link = '/' >Burger</MenuItem>
+            <MenuItem active link = '/' >Payment</MenuItem>
             </ul>
         </div>
      );

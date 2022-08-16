@@ -3,7 +3,7 @@ import styles from './style.module.css'
 function MenuItem(props) {
     return ( 
         <li className={styles.MenuItem}>
-            <a href = "" >{props.children}</a>
+            <a className ={props.active ? styles.active : null }  href = {props.link} >{props.children}</a>
         </li>
      );
 }
