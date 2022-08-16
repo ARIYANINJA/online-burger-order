@@ -3,6 +3,7 @@ import Burger from '../../components/Burger';
 import BuildControls from '../../components/BuildControls';
 import Modal from '../../components/General/Modal'
 import OrderSummary from '../../components/OrderSummary';
+import Shadow from '../../components/General/Shadow'
 const INGREDIENTS_PRICES = {salad: 150, cheese: 250, bacon: 800, meat: 1500 }
     const INGREDIENTS_NAMES = {
         bacon: "Гахайн мах",
@@ -50,11 +51,16 @@ function BurgerBuilder() {
     for(let key in disabledIngredients){
         disabledIngredients[key] = disabledIngredients[key] <= 0;
     }
+    const continueOrder = () => {
+        console.log('continue order');
+    }
     return ( 
         <div>
             <Modal closeConfirmModal = {closeConfirmModal} show  = {confirmOrder}>
-                <OrderSummary ingredients = {ingredients} ingredientsNames = {INGREDIENTS_NAMES}/>
+                <OrderSummary onCancel = {closeConfirmModal} 
+                onContinue = {continueOrder } price = {totalPrice} ingredients = {ingredients} ingredientsNames = {INGREDIENTS_NAMES}/>
                 </Modal>
+                <Shadow show = {confirmOrder} closeConfirmModal = {closeConfirmModal}></Shadow>
             <Burger orts = {ingredients}/>
             <BuildControls ingredientsNames = {INGREDIENTS_NAMES} disabled ={!purchasing} price = {totalPrice}
              disabledIngredients = {disabledIngredients} ortsHasah  = {ortsHasah}

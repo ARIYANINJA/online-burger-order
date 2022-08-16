@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Logo{  
+    height: 3.5rem;
+    width: 4rem;
+    box-sizing: border-box;
+}

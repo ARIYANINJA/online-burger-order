@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './style.module.css'
+import Button from '../General/Button'
 function OrderSummary(props) {
     return ( 
         <div>
@@ -10,6 +11,11 @@ function OrderSummary(props) {
             <ul style={styles}>
                 {Object.keys(props.ingredients).map(el=> (<li  key = {el}>{props.ingredientsNames[el]} : {props.ingredients[el]} </li>))}
             </ul>
+            <strong>your order price is : {props.price}₮</strong>
+            <div>
+            <Button clicked  = {props.onCancel} onClick = {props.onCancel} text = 'Cancel' btnType = 'Danger' />
+            <Button clicked = {props.onContinue} text = 'Confirm' btnType = 'Success'/>
+            </div>
         </div>
      );
 }

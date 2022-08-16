@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './style.module.css'
+import Logo from '../../components/Logo'
+import Menu from '../../components/Menu'
 function Toolbar() {
     return ( 
         <header className={styles.toolbar}>
             <div >...</div>
-            <div >Logo</div>
-            <nav>menu</nav>
+                <Logo/>
+            <nav><Menu/></nav>
         </header>
      );
 }
