@@ -2,8 +2,14 @@ import React,{useState} from 'react';
 import Burger from '../../components/Burger';
 import BuildControls from '../../components/BuildControls';
 import Modal from '../../components/General/Modal'
+import OrderSummary from '../../components/OrderSummary';
 const INGREDIENTS_PRICES = {salad: 150, cheese: 250, bacon: 800, meat: 1500 }
-
+    const INGREDIENTS_NAMES = {
+        bacon: "Гахайн мах",
+        cheese: "Бяслаг",
+        meat: "Үхрийн мах",
+        salad:"Салад"
+    }
 function BurgerBuilder() {
     const[ingredients, setIngredients] = useState({
         salad: 0,
@@ -39,13 +45,11 @@ function BurgerBuilder() {
     }
     return ( 
         <div>
-            <Modal><h1>
-                Та итгэлтэй байна уу
-                </h1>
-                <p>Захиалагын дэлгэрэнгүй</p>
+            <Modal>
+                <OrderSummary ingredients = {ingredients} ingredientsNames = {INGREDIENTS_NAMES}/>
                 </Modal>
             <Burger orts = {ingredients}/>
-            <BuildControls disabled ={!purchasing} price = {totalPrice}
+            <BuildControls ingredientsNames = {INGREDIENTS_NAMES} disabled ={!purchasing} price = {totalPrice}
              disabledIngredients = {disabledIngredients} ortsHasah  = {ortsHasah}
              ortsNemeh = {ortsNemeh}/>
            
