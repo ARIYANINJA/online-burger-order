@@ -7,7 +7,7 @@ function Toolbar() {
         <header className={styles.toolbar}>
             <div >...</div>
                 <Logo/>
-            <nav><Menu/></nav>
+            <nav className = {styles.HideOnMobile}><Menu/></nav>
         </header>
      );
 }
