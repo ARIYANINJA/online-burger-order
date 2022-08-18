@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './style.module.css'
-function Sidebar() {
+import Logo from '../Logo';
+import Menu from '../Menu';
+import Shadow from '../General/Shadow'
+function SideBar(props) {
+    const[classes, setClasses] = useState([styles.SideBar,styles.Close])
+    useEffect(()=>{
+        if(props.showSidebar)
+        setClasses([styles.SideBar, styles.Open])
+    },[props.showSidebar])
     return ( 
-        <div>
-            <h1>
-                side is here
-            </h1>
+        <div className={styles.Container}>
+            <Shadow show = {props.showSidebar}/>
+        <div className={classes.join(" ")} onClick = {props.toggleSidebar}>
+            <div className={styles.Logo}>
+                <Logo/>
+            </div>
+            <Menu/>
+        </div>
         </div>
      );
 }
 
-export default Sidebar;
+export default SideBar;
