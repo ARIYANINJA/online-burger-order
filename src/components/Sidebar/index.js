@@ -6,13 +6,12 @@ import Shadow from '../General/Shadow'
 function SideBar(props) {
     const[classes, setClasses] = useState([styles.SideBar,styles.Close])
     useEffect(()=>{
-        if(props.showSidebar)
-        setClasses([styles.SideBar, styles.Open])
+        setClasses(props.showSidebar ? [styles.SideBar , styles.Open]:[styles.SideBar,styles.Close])
     },[props.showSidebar])
     return ( 
         <div className={styles.Container}>
-            <Shadow show = {props.showSidebar}/>
-        <div className={classes.join(" ")} onClick = {props.toggleSidebar}>
+            <Shadow show = {props.showSidebar} onClick = {props.toggleSideBar}/>
+        <div className={classes.join(" ")} onClick = {props.toggleSideBar}>
             <div className={styles.Logo}>
                 <Logo/>
             </div>

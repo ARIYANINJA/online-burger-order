@@ -6,7 +6,7 @@ function Menu() {
         <div>
             <ul className={styles.Menu}>
             <MenuItem active link = '/' >New Order</MenuItem>
-            <MenuItem  link  = '/login'>Login</MenuItem>
+            <MenuItem  link  = '/'>Login</MenuItem>
             </ul>
         </div>
      );
