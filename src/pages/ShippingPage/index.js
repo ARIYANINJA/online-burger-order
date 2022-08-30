@@ -32,10 +32,10 @@ const showContactData = ()=>{
             <Burger orts = {ingredients}/>
             <Button clicked  = {()=>goBack()} text = 'BackToTheOrder' btnType = 'Danger' />
             <Button clicked  = {()=>showContactData()} text = 'FillOrderInformation' btnType = 'Success' />
-            <Route exact path = '/ship/contact'>
+            {/* <Route exact path = '/ship/contact'> */}
 
 
-            </Route>
+            {/* </Route> */}
         </div>
      );
 }
