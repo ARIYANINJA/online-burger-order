@@ -6,6 +6,8 @@ import OrderSummary from '../../components/OrderSummary';
 import Shadow from '../../components/General/Shadow'
 import axios from '../../axios-orders';
 import Spinner from '../../components/General/Spinner';
+import { Link } from 'react-router-dom';
+import { withRouter } from "react-router";
 const INGREDIENTS_PRICES = {salad: 150, cheese: 250, bacon: 800, meat: 1500 }
     const INGREDIENTS_NAMES = {
         bacon: "Гахайн мах",
@@ -13,7 +15,7 @@ const INGREDIENTS_PRICES = {salad: 150, cheese: 250, bacon: 800, meat: 1500 }
         meat: "Үхрийн мах",
         salad:"Салад"
     }
-function BurgerBuilder() {
+function BurgerBuilder(props) {
     const[ingredients, setIngredients] = useState({
         salad: 0,
         cheese: 0, 
@@ -65,12 +67,14 @@ function BurgerBuilder() {
         }
     }
     const continueOrder = () => {
-        setLoader(true)
-      axios.post('/orders.json', order).then(response =>{
-      }).finally(()=>{
-        setLoader(false)
-      })
-    }
+    //     setLoader(true)
+    //   axios.post('/orders.json', order).then(response =>{
+    //   }).finally(()=>{
+    //     setLoader(false)
+    //   })
+    props.history.push('/ship')
+    closeConfirmModal();
+     }
     return ( 
         <div>
             <Modal closeConfirmModal = {closeConfirmModal} show  = {confirmOrder}>
@@ -88,4 +92,4 @@ function BurgerBuilder() {
      );
 }
 
-export default BurgerBuilder;
+export default withRouter(BurgerBuilder);

@@ -4,6 +4,9 @@ import Toolbar from '../../components/Toolbar'
 import BurgerPage from '../BurgerPage';
 import Sidebar  from '../../components/SideBar';
 import OrderPage from '../OrderPage';
+import { Route} from 'react-router-dom';
+import { withRouter } from "react-router";
+import ShippingPage from '../ShippingPage';
 function App() {
   const [showSidebar , setShowSidebar] = useState(false);
   const toggleSideBar = () => {
@@ -14,11 +17,18 @@ function App() {
       <Toolbar toggleSideBar = {toggleSideBar}/>
       <Sidebar showSidebar = {showSidebar} toggleSideBar = {toggleSideBar} />
       <main className={styles.content}>
-      <BurgerPage/>
+          <Route exact path = '/'>
+            <BurgerPage/>
+          </Route>
+           <Route exact path = '/ship'>
+            <ShippingPage/>
+          </Route>
+        <Route exact path = '/orders'>
       <OrderPage/>
+      </Route>
       </main>
     </div>
    );
 }
 
-export default App
+export default  withRouter(App)

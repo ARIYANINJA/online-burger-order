@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './style.module.css'
 import MenuItem from '../MenuItem';
-function Menu() {
+function Menu(props) {
     return ( 
         <div>
             <ul className={styles.Menu}>
-            <MenuItem active link = '/' >New Order</MenuItem>
-            <MenuItem  link  = '/'>Login</MenuItem>
+            <MenuItem link = '/' active = {true} >New Order</MenuItem>
+            <MenuItem link  = '/orders' active = {false}>Orders</MenuItem>
             </ul>
         </div>
      );
