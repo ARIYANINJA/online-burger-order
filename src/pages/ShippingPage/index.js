@@ -20,15 +20,18 @@ useEffect(()=>{
 },[])
  
 const goBack = ()=>{
-        console.log('hello world');
         props.history.goBack();
+}
+
+const showContactData = ()=>{
+    console.log('damnSon');
 }
 
     return ( 
         <div className={styles.ShippingPage}>
             <Burger orts = {ingredients}/>
             <Button clicked  = {()=>goBack()} text = 'BackToTheOrder' btnType = 'Danger' />
-            {/* <Button clicked = {()=>goBack} name = 'Back' type = 'Danger'/> */}
+            <Button clicked  = {()=>showContactData()} text = 'FillOrderInformation' btnType = 'Success' />
         </div>
      );
 }
