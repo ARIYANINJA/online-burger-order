@@ -4,9 +4,8 @@ import Toolbar from '../../components/Toolbar'
 import BurgerPage from '../BurgerPage';
 import Sidebar  from '../../components/SideBar';
 import OrderPage from '../OrderPage';
-import { Route} from 'react-router-dom';
-import { withRouter } from "react-router";
-import ShippingPage from '../ShippingPage';
+import { Route, withRouter} from 'react-router-dom';
+import ShippingPage from '../ShippingPage'; 
 function App() {
   const [showSidebar , setShowSidebar] = useState(false);
   const toggleSideBar = () => {
@@ -31,4 +30,4 @@ function App() {
    );
 }
 
-export default  withRouter(App)
+export default withRouter(App)

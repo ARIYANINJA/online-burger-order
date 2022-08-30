@@ -72,7 +72,15 @@ function BurgerBuilder(props) {
     //   }).finally(()=>{
     //     setLoader(false)
     //   })
-    props.history.push('/ship')
+    const params = [];
+    for(let orts in ingredients){
+        params.push(orts + '=' + ingredients[orts])
+    }
+    const query = params.join("&");
+    props.history.push({
+        pathname: '/ship/',
+        search: query
+    })
     closeConfirmModal();
      }
     return ( 
