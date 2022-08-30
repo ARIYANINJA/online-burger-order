@@ -24,21 +24,7 @@ function BurgerBuilder() {
     const[purchasing, setPurchasing] = useState(false)
     const[confirmOrder, setConfirmOrder] = useState(false)
     const[Loader, setLoader] = useState(false)
-    const[lastCustomerName, setLastCustomerName] = useState('')
 
-    useEffect(() =>{
-        setLoader(true) 
-        axios.get('/orders.json').then(response =>{
-            const arr = Object.values(response.data)
-            const lastOrder = arr.slice(-1)
-            setIngredients(lastOrder[0].orts)
-            setTotalPrice(lastOrder[0].dun)
-           setLastCustomerName(lastOrder[0].hayag.name)
-        
-        }).catch(err => console.log(err)).finally(()=>{
-               setLoader(false)
-        })
-    },[])
     useEffect(()=>{
         totalPrice > 0 ? setPurchasing(true) : setPurchasing(false)
     },[totalPrice])
@@ -92,7 +78,6 @@ function BurgerBuilder() {
                 onContinue = {continueOrder } price = {totalPrice} ingredients = {ingredients} ingredientsNames = {INGREDIENTS_NAMES}/> }
                 </Modal>
                 <Shadow show = {confirmOrder} onClick = {closeConfirmModal}></Shadow>
-                <h1 style={{textAlign: 'center'}}>suuliin uilchluulegch bol {lastCustomerName}</h1>
                 {Loader && <Spinner/>}
             <Burger orts = {ingredients}/>
             <BuildControls ingredientsNames = {INGREDIENTS_NAMES} disabled ={!purchasing} price = {totalPrice}
