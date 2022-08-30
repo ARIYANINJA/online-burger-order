@@ -24,7 +24,7 @@ const goBack = ()=>{
 }
 
 const showContactData = ()=>{
-    console.log('damnSon');
+    props.history.push('/ship/contact')
 }
 
     return ( 
@@ -32,6 +32,10 @@ const showContactData = ()=>{
             <Burger orts = {ingredients}/>
             <Button clicked  = {()=>goBack()} text = 'BackToTheOrder' btnType = 'Danger' />
             <Button clicked  = {()=>showContactData()} text = 'FillOrderInformation' btnType = 'Success' />
+            <Route exact path = '/ship/contact'>
+
+
+            </Route>
         </div>
      );
 }
