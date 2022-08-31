@@ -19,7 +19,7 @@ function App() {
           <Route exact path = '/'>
             <BurgerPage/>
           </Route>
-           <Route exact path = '/ship'>
+           <Route path = '/ship'>
             <ShippingPage/>
           </Route>
         <Route exact path = '/orders'>

@@ -1,9 +1,10 @@
 import React,{useEffect, useState} from 'react';
 import styles from './style.module.css'
 import Burger from '../../components/Burger'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import Button from '../../components/General/Button'
-function ShippingPage(props) {
+import ContactData from '../../components/ContactData';
+function ShippingPage(props) {  
       const[ingredients, setIngredients] = useState({
         salad: 0,
         cheese: 0, 
@@ -24,7 +25,7 @@ const goBack = ()=>{
 }
 
 const showContactData = ()=>{
-    props.history.push('/ship/contact')
+    props.history.push('/ship/' + props.location.search + '&/contact')
 }
 
     return ( 
@@ -32,10 +33,9 @@ const showContactData = ()=>{
             <Burger orts = {ingredients}/>
             <Button clicked  = {()=>goBack()} text = 'BackToTheOrder' btnType = 'Danger' />
             <Button clicked  = {()=>showContactData()} text = 'FillOrderInformation' btnType = 'Success' />
-            {/* <Route exact path = '/ship/contact'> */}
-
-
-            {/* </Route> */}
+            <Route path = {'/ship/' + props.location.search + '&/contact'}>
+                    <ContactData ingredients = {ingredients}/>
+                     </Route>
         </div>
      );
 }
